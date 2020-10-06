@@ -58,7 +58,6 @@ eraser.addEventListener('click', () => {
   eraser.style.color = 'black';
   activeToolEl.textContent = 'Eraser';
   currentColor = bucketColor;
-  currentSize = 50;
 });
 
 // Switch back to Brush
@@ -68,8 +67,6 @@ function switchToBrush() {
   brushIcon.style.color = 'black';
   eraser.style.color = 'white';
   currentColor = `#${brushColorBtn.value}`;
-  currentSize = 10;
-  brushSlider.value = 10;
   displayBrushSize();
 }
 

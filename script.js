@@ -22,6 +22,8 @@ let currentColor = '#A51DAB';
 let isEraser = false;
 let isMouseDown = false;
 let drawnArray = [];
+let lastBrushSize;
+let lastEraserSize;
 
 // Formatting Brush Size
 function displayBrushSize() {
@@ -58,6 +60,8 @@ eraser.addEventListener('click', () => {
   eraser.style.color = 'black';
   activeToolEl.textContent = 'Eraser';
   currentColor = bucketColor;
+  lastEraserSize = 50;
+  currentSize = lastEraserSize;
 });
 
 // Switch back to Brush
@@ -67,6 +71,8 @@ function switchToBrush() {
   brushIcon.style.color = 'black';
   eraser.style.color = 'white';
   currentColor = `#${brushColorBtn.value}`;
+  lastBrushSize = brushSlider.value;
+  currentSize = lastBrushSize
   displayBrushSize();
 }
 
